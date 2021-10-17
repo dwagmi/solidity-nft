@@ -141,7 +141,7 @@ const App = () => {
 
   const Gif = () => (
     <div id="gif" className="gif-class">
-      <img src="https://c.tenor.com/21NZ4IAfMT0AAAAM/testing-new.gif" width="900"></img>
+      <img src="https://c.tenor.com/21NZ4IAfMT0AAAAM/testing-new.gif" width="70%"></img>
     </div>
   )
 
