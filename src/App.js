@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import myEpicNft from './utils/MyEpicNFT.json';
 
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = 'notthisguy';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
@@ -15,7 +15,8 @@ const CONTRACT_ADDRESS = "0x19189474533ded8CadFDb510CA375611537d0978";
 const App = () => {
 
     const [currentAccount, setCurrentAccount] = useState("");
-    
+    const [showGif, setShowGif] = useState(false); 
+
     const checkIfWalletIsConnected = async () => {
       const { ethereum } = window;
 
@@ -126,6 +127,22 @@ const App = () => {
     }
   }
 
+  const onClickShowGif = () => {
+    if (showGif == false) {
+      console.log("toggling showGif to True");
+      setShowGif(true);
+    } else {
+      console.log("toggling showGif to False");
+      setShowGif(false); 
+    }
+  }
+
+  const Gif = () => (
+    <div id="gif" className="gif-class">
+      <img src="https://c.tenor.com/21NZ4IAfMT0AAAAM/testing-new.gif" width="900"></img>
+    </div>
+  )
+
 
   useEffect(() => {
     checkIfWalletIsConnected();
@@ -138,7 +155,7 @@ const App = () => {
   );
 
   const renderMintUI = () => (
-    <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
+    <button onClick={onClickShowGif} className="cta-button connect-wallet-button">
       Mint NFT
     </button>
   )
@@ -147,11 +164,14 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">My NFT Collection</p>
+          <p className="header gradient-text">Special NFT for... Martin</p>
           <p className="sub-text">
-            Each unique. Each beautiful. Discover your NFT today.
+            Each unique. Each beautiful. Get your special NFT for Martin today.
           </p>
           {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
+        </div>
+        <div className="header-container">
+        { showGif ? <Gif /> : null}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
@@ -160,7 +180,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`built by @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
