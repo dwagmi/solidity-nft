@@ -17,6 +17,9 @@ npx hardhat help
 # Find the NFT on Opensea's Testnet!
 https://testnets.opensea.io/collection/gatsbynft
 
+# Find the 2nd NFT on Rinkeby Rarible!
+https://rinkeby.rarible.com/token/0x9899f00b679474778542b3D5B60913ed08a0e41a:0?tab=details 
+
 # Run Locally
 ```shell
 npx hardhat run scripts/run.js
