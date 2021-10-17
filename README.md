@@ -14,6 +14,9 @@ node scripts/sample-script.js
 npx hardhat help
 ```
 
+# Find the NFT on Opensea's Testnet!
+https://testnets.opensea.io/collection/gatsbynft
+
 # Run Locally
 ```shell
 npx hardhat run scripts/run.js
@@ -21,5 +24,6 @@ npx hardhat run scripts/run.js
 
 # Deploy to testnet
 ```shell
+npm i dotenv
 npx hardhat run scripts/deploy.js --network rinkeby
 ```
