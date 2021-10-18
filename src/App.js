@@ -151,7 +151,7 @@ const App = () => {
   }, [])
 
   const renderNotConnectedContainer = () => (
-    <button onClick={connectWallet} className="cta-button connect-wallet-button">
+    <button onClick={onClickShowGif} className="cta-button connect-wallet-button">
       Connect to Wallet
     </button>
   );
@@ -166,9 +166,9 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">Special NFT for... Derek</p>
+          <p className="header gradient-text">Special NFT for... Noot noot</p>
           <p className="sub-text">
-            Each unique. Each beautiful. Get your special NFT for Derek today.
+            Each unique. Each beautiful. Get your special NFT for Noot noot today.
           </p>
           {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
         </div>
